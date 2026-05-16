@@ -74,11 +74,8 @@
     <section id="method">
       <div class="container">
         <h2 class="section-title">Method Overview</h2>
-        <p class="section-lead">We replace task-specific feature learning with frozen foundation representations and a lightweight fusion pipeline.</p>
-
-        <div class="method-img">
-          <img src="assets/overview.png" alt="Method overview figure">
-        </div>
+        <div class="abstract-box">Our method rethinks dense optical flow as a representation-driven correspondence problem rather than a refinement-heavy prediction task. Given two consecutive frames, we first extract semantic visual features from a frozen DINO-v2 backbone and geometric cues from a monocular depth foundation model. These two sources of information are complementary. First, DINO-v2 provides robust appearance and semantic consistency, and second, the depth prior contributes boundary-aware structural cues around occlusions, motion discontinuities, and thin objects. We project and fuse these features into a unified representation, which is then used for global correspondence matching. Instead of repeatedly refining flow estimates at test time, our framework predicts dense optical flow in a single forward pass, showing that strong foundation priors can reduce the need for computationally expensive test-time scaling. In summary, we replace task-specific feature learning with frozen foundation representations and a lightweight fusion pipeline. 
+        </div><br/>
 
         <div style="height: 24px"></div>
         <div class="grid cols-3">
@@ -94,7 +91,12 @@
             <h3>3. Global Matching</h3>
             <p>Fused representations are matched globally to estimate dense correspondences without recurrent refinement.</p>
           </div>
+        </div><br/>
+        
+        <div class="method-img">
+          <img src="assets/overview.png" alt="Method overview figure">
         </div>
+      
       </div>
     </section>
 
